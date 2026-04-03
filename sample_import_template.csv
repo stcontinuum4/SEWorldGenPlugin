@@ -1,0 +1,41 @@
+Type,Name,ParentName,SubtypeId,Diameter,PosX,PosY,PosZ,RingRadius,RingWidth,RingHeight,RingAngleX,RingAngleY,RingAngleZ,AsteroidSizeMin,AsteroidSizeMax
+# ============================================================
+# Star System CSV Import Template for SEWorldGenPlugin
+# ============================================================
+# Column descriptions:
+#   Type          - PLANET, MOON, RING, or BELT
+#   Name          - Display name of the object (must be unique)
+#   ParentName    - Name of parent planet (required for MOON and RING, leave empty for PLANET and BELT)
+#   SubtypeId     - Planet definition ID (required for PLANET and MOON, e.g. EarthLike, Mars, Moon, Alien, Europa, Pertam, Triton, Titan)
+#   Diameter      - Size in meters (required for PLANET and MOON)
+#   PosX,PosY,PosZ - World coordinates in meters
+#   RingRadius    - Distance from center to ring middle in meters (RING and BELT only)
+#   RingWidth     - Radial thickness of the ring in meters (RING and BELT only)
+#   RingHeight    - Vertical thickness of the ring in meters (RING and BELT only)
+#   RingAngleX,RingAngleY,RingAngleZ - Ring rotation in degrees (RING and BELT only, defaults to 0)
+#   AsteroidSizeMin - Minimum asteroid size in meters (RING and BELT only, defaults to 32)
+#   AsteroidSizeMax - Maximum asteroid size in meters (RING and BELT only, defaults to 1024)
+#
+# Notes:
+#   - Lines starting with # are comments and will be skipped
+#   - Column order does not matter (parsed by header name)
+#   - Parents must be defined before or already exist in the system
+#   - MOONs and RINGs can reference planets already in the star system
+# ============================================================
+#
+# --- Planets (children of system center) ---
+PLANET,Terra,,EarthLike,120000,500000,0,0,,,,,,,,
+PLANET,Mars Prime,,Mars,60000,1500000,0,50000,,,,,,,,
+PLANET,Gas Giant,,Alien,240000,3000000,0,-100000,,,,,,,,
+#
+# --- Moons (ParentName must match a planet Name above or in the existing system) ---
+MOON,Luna,Terra,Moon,19000,550000,0,0,,,,,,,,
+MOON,Deimos,Mars Prime,Europa,9500,1580000,0,50000,,,,,,,,
+#
+# --- Rings (asteroid ring around a planet) ---
+RING,Terra Ring,Terra,,,500000,0,0,150000,30000,5000,5,0,-3,64,512
+RING,Gas Giant Ring,Gas Giant,,,3000000,0,-100000,300000,50000,8000,0,10,0,128,1024
+#
+# --- Belts (asteroid ring around the system center, no ParentName needed) ---
+BELT,Inner Belt,,,,0,0,0,800000,120000,15000,0,0,0,256,1024
+BELT,Outer Belt,,,,0,0,0,4000000,200000,20000,3,0,-2,512,2048

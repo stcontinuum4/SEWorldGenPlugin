@@ -58,7 +58,7 @@
   <ItemGroup>
     <Reference Include="0Harmony, Version=2.3.3.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>G:\SteamLibrary\steamapps\common\SpaceEngineers\Bin64\0Harmony.dll</HintPath>
+      <HintPath>..\Bin64\Plugins\Libraries\0Harmony.dll</HintPath>
     </Reference>
     <Reference Include="netstandard" />
     <Reference Include="ProtoBuf.Net">
@@ -215,6 +215,7 @@
     <Compile Include="Patches\ScenarioCustomizationPatch.cs" />
     <Compile Include="Session\MyAdminMenuExtensionRegister.cs" />
     <Compile Include="GUI\AdminMenu\MyPluginAdminMenuSubMenu.cs" />
+    <Compile Include="GUI\AdminMenu\SubMenus\MyCsvImportMenu.cs" />
     <Compile Include="GUI\AdminMenu\SubMenus\MyPlanetSpawnMenu.cs" />
     <Compile Include="GUI\AdminMenu\SubMenus\MyStarSystemDesignerMenu.cs" />
     <Compile Include="GUI\AdminMenu\SubMenus\StarSystemDesigner\MyEmptyObjectRenderObject.cs" />
@@ -259,6 +260,7 @@
     <Compile Include="Session\MySettingsSession.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities\MyCsvImporter.cs" />
     <Compile Include="Utilities\MyFileUtils.cs" />
     <Compile Include="Utilities\MyNamingUtils.cs" />
     <Compile Include="Utilities\MyNetUtil.cs" />
